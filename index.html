@@ -651,57 +651,42 @@
                 function showMessage(formId, message, color) {
                     let form = document.getElementById(formId);
                     let messageBox = form.querySelector(".auth-message");
-
-                    // Nếu chưa có phần tử thông báo, tạo mới
                     if (!messageBox) {
                         messageBox = document.createElement("p");
                         messageBox.className = "auth-message";
                         messageBox.style.textAlign = "center";
                         form.appendChild(messageBox);
                     }
-
-                    // Cập nhật nội dung và màu sắc của thông báo
                     messageBox.style.color = color;
                     messageBox.innerText = message;
                 }
-
-                // Xử lý đăng ký
                 function handleSignUp(event) {
                     event.preventDefault(); 
 
                     let email = document.querySelector("#signUpForm input[type='email']").value;
                     let password = document.querySelector("#signUpForm input[type='password']").value;
                     let confirmPassword = document.querySelector("#signUpForm input:nth-of-type(6)").value;
-
-                    // Kiểm tra email hợp lệ
                     if (!isValidEmail(email)) {
                         showMessage("signUpForm", "Email không hợp lệ!", "red");
                         return;
                     }
-
-                    // Kiểm tra mật khẩu có khớp không
                     if (password !== confirmPassword) {
                         showMessage("signUpForm", "Mật khẩu xác nhận không khớp!", "red");
                         return;
                     }
 
-                    // Lưu thông tin đăng ký
                     registeredUsers[email] = password;
-
-                    // Hiển thị thông báo đăng ký thành công
                     showMessage("signUpForm", "Đăng ký thành công!", "green");
-
-                    // Chuyển sang form đăng nhập sau 1 giây
                     setTimeout(() => {
                         toggleAuth('signIn');
-                        // Xóa thông báo khi chuyển form
+                        
                         document.querySelector("#signUpForm .auth-message").innerText = "";
                     }, 1000);
                 }
 
                 // Xử lý đăng nhập
                 function handleSignIn(event) {
-                    event.preventDefault(); // Ngăn reload trang
+                    event.preventDefault(); 
 
                     let email = document.querySelector("#signInForm input[type='email']").value;
                     let password = document.querySelector("#signInForm input[type='password']").value;
@@ -712,11 +697,9 @@
                         return;
                     }
 
-                    // Kiểm tra thông tin đăng nhập
                     if (registeredUsers[email] && registeredUsers[email] === password) {
                         showMessage("signInForm", "Đăng nhập thành công!", "green");
-
-                        // Ẩn form đăng nhập sau 1 giây
+                        
                         setTimeout(() => {
                             document.querySelector(".auth-container").style.display = "none";
                         }, 1000);
@@ -724,8 +707,6 @@
                         showMessage("signInForm", "Email hoặc mật khẩu sai!", "red");
                     }
                 }
-
-                // Gắn sự kiện submit cho form
                 document.querySelector("#signUpForm form").addEventListener("submit", handleSignUp);
                 document.querySelector("#signInForm form").addEventListener("submit", handleSignIn);
 
