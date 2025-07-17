@@ -284,21 +284,21 @@
                 background-color: #1e3c7d;
                 color: white;
             }
-            /* Hộp thoại hiển thị nội dung */
+            
             /* ================== HỘP THOẠI GIỚI THIỆU 5 BAN ================== */
             #infoContent {
                 display: none;
-                background: rgba(255, 255, 255, 0.95); /* Nền trắng mờ */
-                color: black; /* Chữ đen */
+                background: rgba(255, 255, 255, 0.95); 
+                color: black;
                 padding: 15px;
                 border-radius: 10px;
                 margin-top: 10px;
-                text-align: center; /* Căn giữa tiêu đề */
+                text-align: center;
             }
 
             /* Căn giữa tiêu đề */
             #infoContent h2 {
-                color: #2f55a4; /* Màu xanh đậm */
+                color: #2f55a4; 
                 text-align: center;
             }
 
@@ -307,7 +307,7 @@
                 padding: 0;
                 text-align: left;
                 width: fit-content;
-                margin: 0 auto; /* Căn giữa danh sách */
+                margin: 0 auto; 
                 list-style: none;
             }
 
@@ -335,7 +335,6 @@
                 background-color: #1e3c7d;
             }
 
-            /* ================== HỘP THOẠI CHI TIẾT TỪNG BAN ================== */
             .modal {
                 display: none;
                 position: fixed;
@@ -357,26 +356,22 @@
                 width: 60%;
                 max-width: 600px;
                 border-radius: 10px;
-                text-align: left; /* Căn lề trái để dễ đọc */
-                line-height: 1.6; /* Tăng khoảng cách dòng */
+                text-align: left; 
+                line-height: 1.6; 
             }
 
             /* Tiêu đề hộp thoại */
             #modal-title {
                 text-align: center;
-                color: #ff2e00; /* Đổi tiêu đề thành đen luôn */
+                color: #ff2e00; 
             }
 
             /* Nội dung hộp thoại */
             #modal-body {
                 font-size: 16px;
-                color: #000; /* Đảm bảo chữ trong nội dung là đen */
-                white-space: pre-line; /* Hỗ trợ xuống dòng */
+                color: #000; 
+                white-space: pre-line; 
             }
-
-
-
-
             /* Nút đóng hộp thoại */
             .close {
                 color: red;
@@ -385,21 +380,21 @@
                 cursor: pointer;
             }
 
-            /* Đổi màu chữ của link */
+           
             #infoContent a {
-                color: #ff5733; /* Màu cam đỏ */
+                color: #ff5733; 
                 text-decoration: none;
                 font-weight: bold;
             }
 
             #infoContent a:hover {
-                color: #ff2e00; /* Màu đỏ đậm khi hover */
+                color: #ff2e00;
             }
 
             /* Nút liên hệ */
             .contact-button {
                 display: inline-block;
-                background-color: #ff5733; /* Màu cam */
+                background-color: #ff5733; 
                 color: white;
                 border: none;
                 padding: 10px 20px;
@@ -413,7 +408,7 @@
             }
 
             .contact-button:hover {
-                background-color: #c9302c; /* Màu đỏ đậm khi hover */
+                background-color: #c9302c; 
             }
            
 
@@ -520,13 +515,12 @@
 
 
         <script>
-            // JavaScript để ẩn/hiện nội dung khi bấm vào "Tìm hiểu thêm"
             function toggleInfo() {
                 var info = document.getElementById("infoContent");
                 if (info.style.display === "none" || info.style.display === "") {
-                    info.style.display = "block"; // Hiển thị nội dung
+                    info.style.display = "block"; 
                 } else {
-                    info.style.display = "none"; // Ẩn nội dung
+                    info.style.display = "none"; 
                 }
             }
 
@@ -673,7 +667,7 @@
 
                 // Xử lý đăng ký
                 function handleSignUp(event) {
-                    event.preventDefault(); // Ngăn reload trang
+                    event.preventDefault(); 
 
                     let email = document.querySelector("#signUpForm input[type='email']").value;
                     let password = document.querySelector("#signUpForm input[type='password']").value;
